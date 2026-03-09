@@ -1,0 +1,8 @@
+{
+  "test_gamified_user": {
+    "unlocked_on": "2026-03-06T15:35:21.405504",
+    "expires_on": "2026-04-05T15:35:21.405504",
+    "unlock_purchase_amount": 60.0,
+    "total_spent": 60.0
+  }
+}

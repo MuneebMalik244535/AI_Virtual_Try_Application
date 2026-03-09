@@ -1,0 +1,55 @@
+{
+  "user_id": "user_12345",
+  "questions_answers": {
+    "budget_range": "$200",
+    "occasion": "casual",
+    "style": "streetwear",
+    "height": "5'10\"",
+    "body_type": "athletic",
+    "skin_tone": "medium",
+    "season": "winter",
+    "preferred_colors": "black and gray",
+    "clothing_type": "hoodies and jackets"
+  },
+  "profile_generated": "The user has a budget of $200 and is looking for casual streetwear for winter. The user has an athletic body type, medium skin tone, and prefers black and gray colors. The user is specifically looking for hoodies and jackets suitable for daily casual wear.",
+  "products_fetched": [
+    {
+      "product_id": 1,
+      "product_name": "Black Casual Hoodie",
+      "product_category": "hoodies",
+      "product_price": 45.0,
+      "product_color": "black",
+      "product_style": "casual,streetwear,winter",
+      "product_description": "Comfortable black hoodie for streetwear style"
+    },
+    {
+      "product_id": 2,
+      "product_name": "Slim Fit Denim Jacket",
+      "product_category": "jackets",
+      "product_price": 60.0,
+      "product_color": "blue",
+      "product_style": "casual,slim,versatile",
+      "product_description": "Modern slim fit denim jacket"
+    }
+  ],
+  "tokens_used": {
+    "input_tokens": 620,
+    "output_tokens": 210,
+    "total_tokens": 830
+  },
+  "cost": 0.5317,
+  "model_used": "llama3-70b-8192",
+  "recommendations": [
+    {
+      "name": "Black Casual Hoodie",
+      "price": 45,
+      "reason": "Matches your streetwear style and winter season."
+    },
+    {
+      "name": "Slim Fit Denim Jacket",
+      "price": 60,
+      "reason": "Works well with your body type and casual occasion."
+    }
+  ],
+  "timestamp": "2026-03-06T14:53:42.232148"
+}
