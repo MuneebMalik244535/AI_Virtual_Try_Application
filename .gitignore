@@ -1,0 +1,8 @@
+# Top-level ignores
+# Environment files
+.env
+.env.*
+# Node / build
+node_modules/
+dist/
+.DS_Store
