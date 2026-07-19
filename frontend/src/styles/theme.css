@@ -1,0 +1,212 @@
+/* ============================================
+   LUXE — Multi-Theme CSS Variable System
+   5 Themes: Midnight Luxe, Blanc Couture,
+   Royal Burgundy, Emerald Atelier, Neon Cyber
+   ============================================ */
+
+/* ── BASE: Transition everything smoothly ── */
+*, *::before, *::after {
+  transition: background-color 0.5s ease, border-color 0.5s ease, color 0.3s ease, box-shadow 0.4s ease;
+}
+
+/* ════════════════════════════════════════════
+   THEME 1: MIDNIGHT LUXE (default)
+   Obsidian black + liquid gold
+   ════════════════════════════════════════════ */
+:root,
+.theme-midnight-luxe {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(251, 191, 36, 0.4);
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --text-muted: rgba(255, 255, 255, 0.3);
+
+  --accent: #fbbf24;         /* amber-400 */
+  --accent-hover: #fcd34d;   /* amber-300 */
+  --accent-text: #000000;
+  --accent-glow: rgba(251, 191, 36, 0.25);
+
+  --nav-bg: rgba(10, 10, 10, 0.85);
+  --overlay: rgba(0, 0, 0, 0.8);
+
+  /* Animated gradient for headings */
+  --heading-gradient: linear-gradient(135deg, #ffffff 0%, #fbbf24 50%, #ffffff 100%);
+  --body-pattern: none;
+}
+
+/* ════════════════════════════════════════════
+   THEME 2: BLANC COUTURE
+   Ivory white + soft rose + platinum
+   ════════════════════════════════════════════ */
+.theme-blanc-couture {
+  --bg-primary: #f8f5f0;
+  --bg-secondary: #ede9e3;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(190, 100, 120, 0.5);
+
+  --text-primary: #1a1a1a;
+  --text-secondary: rgba(0, 0, 0, 0.55);
+  --text-muted: rgba(0, 0, 0, 0.35);
+
+  --accent: #be6478;         /* dusty rose */
+  --accent-hover: #c97488;
+  --accent-text: #ffffff;
+  --accent-glow: rgba(190, 100, 120, 0.2);
+
+  --nav-bg: rgba(248, 245, 240, 0.9);
+  --overlay: rgba(255, 255, 255, 0.7);
+
+  --heading-gradient: linear-gradient(135deg, #1a1a1a 0%, #be6478 50%, #1a1a1a 100%);
+  --body-pattern: none;
+}
+
+/* ════════════════════════════════════════════
+   THEME 3: ROYAL BURGUNDY
+   Deep wine + antique cream + crimson
+   ════════════════════════════════════════════ */
+.theme-royal-burgundy {
+  --bg-primary: #100608;
+  --bg-secondary: #1a0c0e;
+  --bg-card: rgba(255, 230, 210, 0.05);
+  --bg-card-hover: rgba(255, 230, 210, 0.09);
+  --border-color: rgba(180, 50, 50, 0.2);
+  --border-hover: rgba(192, 57, 43, 0.6);
+
+  --text-primary: #f5e6d3;
+  --text-secondary: rgba(245, 230, 211, 0.6);
+  --text-muted: rgba(245, 230, 211, 0.3);
+
+  --accent: #c0392b;         /* deep crimson */
+  --accent-hover: #e74c3c;
+  --accent-text: #f5e6d3;
+  --accent-glow: rgba(192, 57, 43, 0.3);
+
+  --nav-bg: rgba(16, 6, 8, 0.9);
+  --overlay: rgba(10, 3, 4, 0.8);
+
+  --heading-gradient: linear-gradient(135deg, #f5e6d3 0%, #c0392b 50%, #f5e6d3 100%);
+  --body-pattern: radial-gradient(ellipse at 20% 50%, rgba(192,57,43,0.04) 0%, transparent 60%);
+}
+
+/* ════════════════════════════════════════════
+   THEME 4: EMERALD ATELIER
+   Lush dark forest green + antique gold
+   ════════════════════════════════════════════ */
+.theme-emerald-atelier {
+  --bg-primary: #061410;
+  --bg-secondary: #0b1f18;
+  --bg-card: rgba(46, 204, 113, 0.05);
+  --bg-card-hover: rgba(46, 204, 113, 0.08);
+  --border-color: rgba(46, 204, 113, 0.12);
+  --border-hover: rgba(212, 175, 55, 0.5);
+
+  --text-primary: #e8f5e9;
+  --text-secondary: rgba(232, 245, 233, 0.6);
+  --text-muted: rgba(232, 245, 233, 0.3);
+
+  --accent: #d4af37;          /* antique gold */
+  --accent-hover: #e0c050;
+  --accent-text: #061410;
+  --accent-glow: rgba(212, 175, 55, 0.25);
+
+  --nav-bg: rgba(6, 20, 16, 0.9);
+  --overlay: rgba(4, 14, 10, 0.8);
+
+  --heading-gradient: linear-gradient(135deg, #e8f5e9 0%, #d4af37 50%, #2ecc71 100%);
+  --body-pattern: radial-gradient(ellipse at 80% 20%, rgba(46,204,113,0.06) 0%, transparent 55%);
+}
+
+/* ════════════════════════════════════════════
+   THEME 5: NEON CYBER
+   Deep space black + electric cyan + hot pink
+   ════════════════════════════════════════════ */
+.theme-neon-cyber {
+  --bg-primary: #030310;
+  --bg-secondary: #080820;
+  --bg-card: rgba(0, 245, 255, 0.04);
+  --bg-card-hover: rgba(0, 245, 255, 0.08);
+  --border-color: rgba(0, 245, 255, 0.12);
+  --border-hover: rgba(0, 245, 255, 0.5);
+
+  --text-primary: #e0f7ff;
+  --text-secondary: rgba(224, 247, 255, 0.6);
+  --text-muted: rgba(224, 247, 255, 0.25);
+
+  --accent: #00f5ff;          /* electric cyan */
+  --accent-hover: #33f7ff;
+  --accent-text: #030310;
+  --accent-glow: rgba(0, 245, 255, 0.3);
+
+  --nav-bg: rgba(3, 3, 16, 0.9);
+  --overlay: rgba(2, 2, 12, 0.85);
+
+  /* Secondary accent: hot pink */
+  --accent2: #ff00aa;
+  --heading-gradient: linear-gradient(135deg, #00f5ff 0%, #ff00aa 50%, #00f5ff 100%);
+  --body-pattern: 
+    radial-gradient(ellipse at 10% 80%, rgba(255,0,170,0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 20%, rgba(0,245,255,0.07) 0%, transparent 50%);
+}
+
+/* ════════════════════════════════════════════
+   GLOBAL: Apply CSS variables to Tailwind-
+   equivalent utility classes
+   ════════════════════════════════════════════ */
+body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  background-image: var(--body-pattern);
+}
+
+/* Neon Cyber: scanline effect */
+.theme-neon-cyber body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 245, 255, 0.012) 2px,
+    rgba(0, 245, 255, 0.012) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Blanc Couture: paper grain overlay */
+.theme-blanc-couture body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.4;
+}
+
+/* ══ Theme-aware utility classes ══ */
+.t-bg { background-color: var(--bg-primary); }
+.t-bg-card { background-color: var(--bg-card); }
+.t-text { color: var(--text-primary); }
+.t-text-secondary { color: var(--text-secondary); }
+.t-accent { color: var(--accent); }
+.t-accent-bg { background-color: var(--accent); }
+.t-border { border-color: var(--border-color); }
+.t-nav { background-color: var(--nav-bg); }
+
+/* Neon Cyber glow helpers */
+.theme-neon-cyber .t-accent-bg {
+  box-shadow: 0 0 20px var(--accent-glow), 0 0 60px rgba(0, 245, 255, 0.1);
+}
+.theme-neon-cyber a:hover,
+.theme-neon-cyber button:hover {
+  text-shadow: 0 0 8px var(--accent);
+}

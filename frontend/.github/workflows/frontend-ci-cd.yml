@@ -1,0 +1,79 @@
+name: Frontend CI/CD
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # ─────────────────────────────────────────────
+  # JOB 1: Build & Lint Check
+  # ─────────────────────────────────────────────
+  build:
+    name: Build Frontend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create .env file from secrets
+        run: |
+          echo "VITE_GROQ_API_KEY=${{ secrets.VITE_GROQ_API_KEY }}" >> .env
+          echo "VITE_OPENWEATHER_API_KEY=${{ secrets.VITE_OPENWEATHER_API_KEY }}" >> .env
+          echo "VITE_BACKEND_URL=${{ secrets.VITE_BACKEND_URL }}" >> .env
+
+      - name: Build for production
+        run: npm run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 1
+
+  # ─────────────────────────────────────────────
+  # JOB 2: Deploy to GitHub Pages (main branch only)
+  # ─────────────────────────────────────────────
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+
+
+
